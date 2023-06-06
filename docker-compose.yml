@@ -1,0 +1,32 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - '${DB_PORT}:3306'
+    volumes:
+      - ./mysqldb:/var/lib/mysql
+    networks:
+      - admi-bd-loteria
+  adminer:
+    container_name: adminer-loteria
+    depends_on:
+      - db
+    image: adminer:standalone
+    restart: always
+    ports:
+      - ${ADM_PORT}:8080
+    networks:
+      - admi-bd-loteria
+networks:
+  admi-bd-loteria:
+    name: admi-bd-loteria
+    driver: bridge
