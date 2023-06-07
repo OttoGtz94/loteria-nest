@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "57dbb499-d680-4575-8a3b-4a3e28543438",
+		"name": "Loteria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12611724"
+	},
+	"item": [
+		{
+			"name": "Crear Carta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"El gallo\",\n    \"num\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/card/create-card",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"card",
+						"create-card"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Tablero",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"numberOfPlanks\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/plank/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"plank",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Tablero",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"creationKey\": \"mhhrzD\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/plank/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"plank",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar carta",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/card/el_gallo",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"card",
+						"el_gallo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Play",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"creationKey\": \"WyEyBM\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/play",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"play"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Load cards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/api/card/load-cards",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"card",
+						"load-cards"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
